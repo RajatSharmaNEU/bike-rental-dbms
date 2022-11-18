@@ -60,7 +60,7 @@ create table Rider
 create table BikeCategory
 (
     BikeCategoryID INT IDENTITY(1,1) NOT NULL,
-    BikeManufactorName INT NOT NULL,
+    BikeManufactorName VARCHAR(25) NOT NULL,
     BikeDetail varchar(25) NOT NULL,
     CONSTRAINT BikeCategory_PK PRIMARY KEY (BikeCategoryID)
 )
@@ -156,3 +156,9 @@ CREATE TABLE Penalty
     CONSTRAINT Penalty_PK PRIMARY KEY (PenaltyID),
     CONSTRAINT Penalty_PaymentID_FK FOREIGN KEY (PaymentID) REFERENCES Payment(PaymentID)
 )
+
+ALTER TABLE Bike
+    ADD CONSTRAINT Bike_BikeStatus_CHK CHECK (BikeStatus IN ('Available', 'In-Use', 'Broken'));
+
+ALTER TABLE Payment
+    ADD CONSTRAINT Payment_PaymentStatus_CHK CHECK (PaymentStatus IN ('Done', 'Pending'));
