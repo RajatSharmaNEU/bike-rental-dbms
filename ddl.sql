@@ -24,8 +24,8 @@ create table Person
     Advertiser BIT NOT NULL,
     Rider BIT NOT NULL,
     CONSTRAINT Person_PK PRIMARY KEY (PersonID),
-    CONSTRAINT Person_TYPE_CHK CHECK (Advertiser != 0 AND Rider != 0)
-    )
+    CONSTRAINT Person_TYPE_CHK CHECK ((Advertiser = 1 AND Rider = 0) OR (Advertiser = 0 AND Rider = 1))
+)
 
 --Advertiser Table--
 create table Advertiser
