@@ -19,7 +19,7 @@ create table Person
     City VARCHAR(10) NOT NULL,
     [State] VARCHAR(10) NOT NULL,
     Zipcode INT NOT NULL,
-    Phone INT NOT NULL,
+    Phone BIGINT NOT NULL,
     [Password] VARBINARY(25) NOT NULL,
     Advertiser BIT NOT NULL,
     Rider BIT NOT NULL,
