@@ -39,7 +39,7 @@ INSERT INTO Subscription (SubscriptionID,SubscriptionName,StartDate,EndDate)
 VALUES
 (1,'Subscription 1','2022-01-01','2022-03-31'),
 (2,'Subscription 2','2021-12-15','2022-02-28'),
-(3,'Subscription 3','2022 -07-20','2022-12-31'),
+(3,'Subscription 3','2022-07-20','2022-12-31'),
 (4,'Subscription 4','2022-11-01','2022-12-31'),
 (5,'Subscription 5','2021-12-31','2022-12-31'),
 (6,'Subscription 6','2022-10-01','2023-01-31'),
