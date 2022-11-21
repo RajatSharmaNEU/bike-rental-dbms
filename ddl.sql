@@ -20,7 +20,7 @@ create table Person
     [State] VARCHAR(10) NOT NULL,
     Zipcode INT NOT NULL,
     Phone BIGINT NOT NULL,
-    [Password] VARCHAR(25) NOT NULL,
+    [Password] VARBINARY(400) NOT NULL,
     Advertiser BIT NOT NULL,
     Rider BIT NOT NULL,
     CONSTRAINT Person_PK PRIMARY KEY (PersonID),
