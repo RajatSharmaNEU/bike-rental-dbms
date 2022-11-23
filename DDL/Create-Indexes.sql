@@ -1,0 +1,6 @@
+-- Rental
+-- - ServiceID + PersonID -  For view - RevenueByPerson
+-- - ServiceID + DockID - Index - For view - RevenueByDock
+--
+-- Service
+-- - ServiceID + Amount + ServiceType

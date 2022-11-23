@@ -1,4 +1,4 @@
-ALTER PROC GetPenaltyAmount
+CREATE PROCEDURE GetPenaltyAmount
     @serviceID INT,
     @riderID INT,
     @amount INT OUTPUT

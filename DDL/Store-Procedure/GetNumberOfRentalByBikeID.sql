@@ -1,4 +1,4 @@
-ALTER PROCEDURE GetNumberOfRentalByBikeID @startDate DATE, @endDate DATE
+CREATE PROCEDURE GetNumberOfRentalByBikeID @startDate DATE, @endDate DATE
 AS
 BEGIN
     SELECT r.BikeID, COUNT(r.ServiceID) AS RentalCount, SUM (selectedService.Amount) AS Revenue
