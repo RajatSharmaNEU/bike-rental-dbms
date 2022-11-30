@@ -11,6 +11,7 @@ Sequence of file execution -
 8. Insert-Data.sql
 9. Select-Tables.sql 
 10. Select-Views.sql
+11. Execute-StoredProcedure.sql
 
 Data visualization tool configuration steps -  
 1. Install [PowerBI](https://www.microsoft.com/en-us/download/details.aspx?id=58494) for data visualization.

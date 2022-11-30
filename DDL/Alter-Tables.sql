@@ -13,5 +13,3 @@ ALTER TABLE Service ADD CONSTRAINT Service_ServiceType_CHK CHECK (ServiceType IN
 ALTER TABLE Bike ADD CONSTRAINT Bike_BikeStatus_CHK CHECK (BikeStatus IN ('Available', 'In-Use', 'Broken'));
 
 ALTER TABLE Payment ADD CONSTRAINT Payment_PaymentStatus_CHK CHECK (PaymentStatus IN ('Done', 'Pending'));
-
-
