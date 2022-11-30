@@ -1,7 +1,7 @@
 -- VIEW - RevenueByService
-SELECT * FROM Revenue;
-SELECT * FROM Revenue r WHERE r.[Revenue Type] = 'Rental';
-SELECT * FROM Revenue r WHERE r.[Revenue Type] = 'Advertisement';
+SELECT * FROM RevenueByService;
+SELECT * FROM RevenueByService r WHERE r.[Revenue Type] = 'Rental';
+SELECT * FROM RevenueByService r WHERE r.[Revenue Type] = 'Advertisement';
 
 -- VIEW - RevenueByPerson
 SELECT * FROM RevenueByPerson;

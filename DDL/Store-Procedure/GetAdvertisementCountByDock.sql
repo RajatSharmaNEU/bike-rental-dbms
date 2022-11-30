@@ -8,5 +8,6 @@ BEGIN
     WHERE dg.StartDate >= @startDate AND dg.EndDate <= @endDate
     GROUP By dg.DockID, d.DockName;
 END
+GO
 
-EXEC GetAdvertisementCountByDock '01/01/2020', '12/31/2024';
+-- EXEC GetAdvertisementCountByDock '01/01/2020', '12/31/2024';

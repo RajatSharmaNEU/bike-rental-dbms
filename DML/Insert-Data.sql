@@ -151,6 +151,8 @@ INSERT INTO Advertisement Values (7, 7)
 INSERT INTO Advertisement Values (8, 8)
 INSERT INTO Advertisement Values (9, 9)
 INSERT INTO Advertisement Values (10, 10)
+INSERT INTO Advertisement Values (10, 10)
+INSERT INTO Advertisement Values (11, 10)
 
 INSERT INTO Rental Values (11, 11, 1, 1)
 INSERT INTO Rental Values (12, 12, 2, 2)
@@ -197,11 +199,11 @@ INSERT INTO Penalty VALUES (20, 'Traffic light jump', 9);
 INSERT INTO Penalty VALUES (20, 'Traffic light jump', 10);
 
 
-INSERT INTO Person VALUES ('Manuel', 'manuel@gmail.com', '75 Saint Alphonsus Street', 'Boston', 'MA', 1234567899, 02120, EncryptByKey(Key_GUID('Person_SM'), convert(varbinary,'Pass123')), 1, 0);
-INSERT INTO Advertiser VALUES (24, 'Northeastern');
-INSERT INTO Rider VALUES(24, 1);
-INSERT INTO Service VALUES ('Advertisement', '06/09/2023', '02/08/2024', 5000, 'A')
-INSERT INTO Service VALUES ('Rental', '06/09/2023', '02/08/2024', 5000, 'R')
--- Person 24 has took both the sevices - Advertisement and Rental
-INSERT INTO Advertisement VALUES (22, 24);
-INSERT INTO Rental VALUES (23, 24, 1, 1);
+-- INSERT INTO Person VALUES ('Manuel', 'manuel@gmail.com', '75 Saint Alphonsus Street', 'Boston', 'MA', 1234567899, 02120, EncryptByKey(Key_GUID('Person_SM'), convert(varbinary,'Pass123')), 1, 0);
+-- INSERT INTO Advertiser VALUES (24, 'Northeastern');
+-- INSERT INTO Rider VALUES(24, 1);
+-- INSERT INTO Service VALUES ('Advertisement', '06/09/2023', '02/08/2024', 5000, 'A')
+-- INSERT INTO Service VALUES ('Rental', '06/09/2023', '02/08/2024', 5000, 'R')
+-- -- Person 24 has took both the sevices - Advertisement and Rental
+-- INSERT INTO Advertisement VALUES (22, 24);
+-- INSERT INTO Rental VALUES (23, 24, 1, 1);

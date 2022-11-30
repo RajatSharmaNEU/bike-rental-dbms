@@ -9,7 +9,7 @@ BEGIN
     SELECT @serviceID = MAX(ServiceID), @riderID = PersonID
     FROM Rental
     GROUP BY PersonID;
-    PRINT 'Service ID - ' + @serviceID + ' Rider ID - ' + @riderID;
+    PRINT 'Service ID - ' + CAST(@serviceID AS VARCHAR) + ' Rider ID - ' + CAST(@riderID AS VARCHAR);
 
     -- Insert Payment row
     INSERT INTO Payment VALUES ('Pending', @serviceID);

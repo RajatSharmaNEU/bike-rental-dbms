@@ -14,5 +14,5 @@ BEGIN
 END
 GO
 
-EXEC GetNumberOfRentalByBikeID '01/01/2020','12/31/2024';
-GO
+-- EXEC GetNumberOfRentalByBikeID '01/01/2020','12/31/2024';
+-- GO
