@@ -24,7 +24,9 @@ Data visualization tool configuration steps -
    - Dotted Chart - Start Date of Each Service ID: 
      - It displays the date when a service has started.
 
-Pending<br>
-b. Summary Sheet + Files path in sequence - Saranya <br>
-c. DQL - For Stored Procedure, Trigger and UDF - Sanjana<br>
-d. Clean up and refactoring - Rajat
+Important Links - 
+[DDL](DDL)
+[DML](DML)
+[DQL](DQL)
+[Documentation](Documentation)
+[DataVisualization](DataVisualization)
