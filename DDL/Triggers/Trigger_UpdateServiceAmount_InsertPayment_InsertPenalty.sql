@@ -4,14 +4,15 @@ ON Rental
 AFTER INSERT
 AS
 BEGIN
-    -- Find Last Service
+    -- Find INSERTED Service Detail
     DECLARE @serviceID INT, @riderID INT;
-    SELECT @serviceID = MAX(ServiceID), @riderID = PersonID
-    FROM Rental
-    GROUP BY PersonID;
+
+    SELECT @serviceID = ServiceID, @riderID = PersonID
+    FROM INSERTED;
+
     PRINT 'Service ID - ' + CAST(@serviceID AS VARCHAR) + ' Rider ID - ' + CAST(@riderID AS VARCHAR);
 
-    -- Insert Payment row
+    -- Insert Payment ROW
     INSERT INTO Payment VALUES ('Pending', @serviceID);
 
     DECLARE @penalty INT;
@@ -19,6 +20,7 @@ BEGIN
     EXEC dbo.GetPenaltyAmount @serviceID, @riderID, @penalty OUTPUT;
     PRINT @penalty;
 
+    -- INSERT Penalty ROW If penalty exist
     IF @penalty > 0
     BEGIN
         DECLARE @paymentID INT;

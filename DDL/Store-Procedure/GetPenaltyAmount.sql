@@ -19,12 +19,12 @@ BEGIN
     SET @amount = 0;
 
 
-    IF(@serviceStartDate<@subscriptionStartDate)
+    IF(@serviceStartDate < @subscriptionStartDate)
 	BEGIN
         SET @penaltyDays = DATEDIFF(DAY,@serviceStartDate, @subscriptionStartDate)
     END
 
-    IF(@serviceEndDate>@subscriptionEndDate)
+    IF(@serviceEndDate > @subscriptionEndDate)
 	BEGIN
         SET @penaltyDays = DATEDIFF(DAY,@subscriptionEndDate, @serviceEndDate) + @penaltyDays;
     END

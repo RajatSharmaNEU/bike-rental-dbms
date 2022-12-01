@@ -12,9 +12,10 @@ CREATE SYMMETRIC KEY Person_SM WITH ALGORITHM = AES_256 ENCRYPTION BY CERTIFICAT
 OPEN SYMMETRIC KEY Person_SM DECRYPTION BY CERTIFICATE PersonPassword;
 
 -- Person Table Values Insertion--
---Advertisers--
-INSERT INTO Person
-VALUES('Aditya', 'aditya@gmail.com', '75 Saint Alphonsus Street', 'Boston', 'MA', 1234567890, 02120, EncryptByKey(Key_GUID('Person_SM'), convert(varbinary,'Pass123')), 1, 0),
+
+INSERT INTO Person VALUES
+      --Advertisers--
+      ('Aditya', 'aditya@gmail.com', '75 Saint Alphonsus Street', 'Boston', 'MA', 1234567890, 02120, EncryptByKey(Key_GUID('Person_SM'), convert(varbinary,'Pass123')), 1, 0),
       ('Rajat', 'rajat@gmail.com', '75 Saint Alphonsus Street', 'Boston', 'MA', 1234567899, 02120, EncryptByKey(Key_GUID('Person_SM'), convert(varbinary,'Pass123')), 1, 0),
       ('Sanjana', 'sanjana@gmail.com', 'Park Drive', 'Boston', 'MA', 1111111111, 02215, EncryptByKey(Key_GUID('Person_SM'), convert(varbinary,'Pass123')), 1, 0),
       ('Saranya', 'saranya@gmail.com', 'Brighton', 'Boston', 'MA', 1223456789, 02135, EncryptByKey(Key_GUID('Person_SM'), convert(varbinary,'Pass123')), 1, 0),
@@ -42,32 +43,32 @@ VALUES('Aditya', 'aditya@gmail.com', '75 Saint Alphonsus Street', 'Boston', 'MA'
       ('Chakri', 'chakri@gmail.com', 'Jvue', 'Boston', 'MA', 1010101010, 02133, EncryptByKey(Key_GUID('Person_SM'), convert(varbinary,'Pass123')), 1, 1);
 
 --- Advertiser Table Values Insertion ---
-INSERT INTO Advertiser
-VALUES
-    (1, 'Company 1'),
-    (2, 'Company 2'),
-    (3, 'Company 3'),
-    (4, 'Company 4'),
-    (5, 'Company 5'),
-    (6, 'Company 6'),
-    (7, 'Company 7'),
-    (8, 'Company 8'),
-    (9, 'Company 9'),
-    (10, 'Company 10');
+INSERT INTO Advertiser VALUES
+    (1, 'Alphabet'),
+    (2, 'Amazon'),
+    (3, 'Walmart'),
+    (4, 'Apple'),
+    (5, 'CVS Health'),
+    (6, 'United Health Group'),
+    (7, 'Exxon Mobil'),
+    (8, 'Berkshire Hathaway'),
+    (9, 'Bank Of America'),
+    (10, 'Dell Technologies');
 
 --- Subscription Table Values Insertion ---
-INSERT INTO Subscription
-VALUES
-    ('Subscription 1', '2022-11-5', '2022-11-20'),
-    ('Subscription 2', '2021-12-15', '2022-02-28'),
-    ('Subscription 3', '2022-07-20', '2022-12-31'),
-    ('Subscription 4', '2022-11-01', '2022-12-31'),
-    ('Subscription 5', '2021-12-31', '2022-12-31'),
-    ('Subscription 6', '2022-10-01', '2023-01-31'),
-    ('Subscription 7', '2022-09-10', '2022-11-30'),
-    ('Subscription 8', '2023-01-01', '2023-03-31'),
-    ('Subscription 9', '2023-02-14', '2023-04-30'),
-    ('Subscription 10', '2023-01-01', '2023-12-31');
+INSERT INTO Subscription VALUES
+    ('One Week November 2022', '2022-11-01', '2022-11-07'),
+    ('Two Weeks November 2022', '2021-11-01', '2022-11-14'),
+    ('Three Weeks November 2022', '2022-11-01', '2022-11-21'),
+    ('Full November 2022','2022-11-01', '2022-11-30'),
+    ('One Week December 2022', '2022-12-01', '2022-12-07'),
+    ('Two Week December 2022', '2021-12-01', '2022-12-14'),
+    ('Three Week December 2022', '2022-12-01', '2022-12-21'),
+    ('Full December 2022', '2022-12-01', '2022-12-31'),
+    ('One Week January 2023', '2023-01-01', '2023-01-07'),
+    ('Two Week January 2023', '2023-01-01', '2023-01-14'),
+    ('Three Week January 2023', '2023-01-01', '2023-01-21'),
+    ('Full January 2023', '2023-01-01', '2023-01-31');
 
 --- Rider Table Values Insertion ---
 INSERT INTO Rider
@@ -81,7 +82,10 @@ VALUES
     (17, 7),
     (18, 8),
     (19, 9),
-    (20, 10);
+    (20, 10),
+    (21, 9),
+    (22, 10),
+    (23, 11);
 
 -- Trek Bikes, Giant Bicycle, Redline, Bianchi, Davidson
 -- Insert BikeCategory
@@ -108,77 +112,71 @@ INSERT INTO Bike VALUES('FX+2', 50, 'Broken', 8);
 INSERT INTO Bike VALUES('Dual Sport Stagger', 45, 'Available', 9);
 INSERT INTO Bike VALUES('Allant', 45, 'Broken', 10);
 
-INSERT INTO DOCK VALUES ('Dock1', 'Boston');
-INSERT INTO DOCK VALUES ('Dock2', 'Boston');
-INSERT INTO DOCK VALUES ('Dock3', 'Boston');
-INSERT INTO DOCK VALUES ('Dock4', 'Boston');
-INSERT INTO DOCK VALUES ('Dock5', 'Boston');
-INSERT INTO DOCK VALUES ('Dock6', 'Boston');
-INSERT INTO DOCK VALUES ('Dock7', 'Boston');
-INSERT INTO DOCK VALUES ('Dock8', 'Boston');
-INSERT INTO DOCK VALUES ('Dock9', 'Boston');
-INSERT INTO DOCK VALUES ('Dock10', 'Boston');
+INSERT INTO DOCK VALUES ('Heath Street', 'Boston');
+INSERT INTO DOCK VALUES ('Back of the Hill', 'Boston');
+INSERT INTO DOCK VALUES ('Riverway', 'Boston');
+INSERT INTO DOCK VALUES ('Mission Park', 'Boston');
+INSERT INTO DOCK VALUES ('Fenwood Road', 'Boston');
+INSERT INTO DOCK VALUES ('Brigham Circle', 'Boston');
+INSERT INTO DOCK VALUES ('Longwood Medical Area', 'Boston');
+INSERT INTO DOCK VALUES ('Museum of Fine Arts', 'Boston');
+INSERT INTO DOCK VALUES ('Northeastern University', 'Boston');
+INSERT INTO DOCK VALUES ('Symphony', 'Boston');
 
-INSERT INTO Service Values ('Advertisement', '11/18/2022', '03/17/2023', 1000, 'A')
-INSERT INTO Service Values ('Advertisement', '12/20/2022', '06/19/2023', 2000, 'A')
-INSERT INTO Service Values ('Advertisement', '01/08/2023', '09/07/2023', 5000, 'A')
-INSERT INTO Service Values ('Advertisement', '01/16/2023', '07/15/2023', 2000, 'A')
-INSERT INTO Service Values ('Advertisement', '04/27/2023', '12/26/2023', 5000, 'A')
-INSERT INTO Service Values ('Advertisement', '05/13/2023', '09/12/2023', 1000, 'A')
-INSERT INTO Service Values ('Advertisement', '06/06/2023', '12/05/2023', 2000, 'A')
-INSERT INTO Service Values ('Advertisement', '06/09/2023', '02/08/2024', 5000, 'A')
-INSERT INTO Service Values ('Advertisement', '07/29/2023', '03/28/2024', 2000, 'A')
-INSERT INTO Service Values ('Advertisement', '08/29/2023', '04/28/2024', 2000, 'A')
-INSERT INTO Service Values ('Rental', '11/1/2022', '11/25/2022', 100, 'R')
-INSERT INTO Service Values ('Rental', '02/08/2023', '02/10/2023', 200, 'R')
-INSERT INTO Service Values ('Rental', '03/12/2023', '03/17/2023', 500, 'R')
-INSERT INTO Service Values ('Rental', '04/28/2023', '04/29/2023', 100, 'R')
-INSERT INTO Service Values ('Rental', '05/23/2023', '05/25/2023', 100, 'R')
-INSERT INTO Service Values ('Rental', '06/11/2023', '06/13/2023', 200, 'R')
-INSERT INTO Service Values ('Rental', '06/07/2023', '06/12/2023', 500, 'R')
-INSERT INTO Service Values ('Rental', '08/23/2023', '08/25/2023', 200, 'R')
-INSERT INTO Service Values ('Rental', '11/26/2023', '11/27/2023', 100, 'R')
-INSERT INTO Service Values ('Rental', '12/15/2023', '12/17/2023', 200, 'R')
-INSERT INTO Service Values ('Rental', '12/15/2023', '12/17/2023', 200, 'R')
+INSERT INTO Service Values ('Advertisement', '2022-11-01', '2022-11-07', 1000, 'A');
+INSERT INTO Service Values ('Advertisement', '2022-11-01', '2022-11-14', 2000, 'A');
+INSERT INTO Service Values ('Advertisement', '2022-11-01', '2022-11-21', 3000, 'A');
+INSERT INTO Service Values ('Advertisement', '2022-11-01', '2022-11-30', 4000, 'A');
+INSERT INTO Service Values ('Advertisement', '2022-12-01', '2022-12-07', 1000, 'A');
+INSERT INTO Service Values ('Advertisement', '2022-12-01', '2022-12-14', 2000, 'A');
+INSERT INTO Service Values ('Advertisement', '2022-12-01', '2022-12-21', 3000, 'A');
+INSERT INTO Service Values ('Advertisement', '2022-12-01', '2022-12-31', 4000, 'A');
+INSERT INTO Service Values ('Advertisement', '2022-01-01', '2023-01-07', 1000, 'A');
+INSERT INTO Service Values ('Advertisement', '2022-01-01', '2023-01-14', 2000, 'A');
 
-INSERT INTO Advertisement Values (1, 1)
-INSERT INTO Advertisement Values (2, 2)
-INSERT INTO Advertisement Values (3, 3)
-INSERT INTO Advertisement Values (4, 4)
-INSERT INTO Advertisement Values (5, 5)
-INSERT INTO Advertisement Values (6, 6)
-INSERT INTO Advertisement Values (7, 7)
-INSERT INTO Advertisement Values (8, 8)
-INSERT INTO Advertisement Values (9, 9)
-INSERT INTO Advertisement Values (10, 10)
-INSERT INTO Advertisement Values (10, 10)
-INSERT INTO Advertisement Values (11, 10)
+INSERT INTO Service Values ('Rental', '2022-11-01', '2022-11-07', 0, 'R');
+INSERT INTO Service Values ('Rental', '2022-11-01', '2022-11-14', 0, 'R');
+INSERT INTO Service Values ('Rental', '2022-11-01', '2022-11-21', 0, 'R');
+INSERT INTO Service Values ('Rental', '2022-11-01', '2022-11-30', 0, 'R');
+INSERT INTO Service Values ('Rental', '2022-12-01', '2022-12-07', 0, 'R');
+INSERT INTO Service Values ('Rental', '2022-12-01', '2022-12-14', 0, 'R');
+INSERT INTO Service Values ('Rental', '2022-12-01', '2022-12-21', 0, 'R');
+INSERT INTO Service Values ('Rental', '2022-12-01', '2022-12-31', 0, 'R');
+INSERT INTO Service Values ('Rental', '2023-01-01', '2023-01-07', 0, 'R');
+INSERT INTO Service Values ('Rental', '2023-01-01', '2023-01-14', 0, 'R');
 
-INSERT INTO Rental Values (11, 11, 1, 1)
-INSERT INTO Rental Values (12, 12, 2, 2)
-INSERT INTO Rental Values (13, 13, 3, 3)
-INSERT INTO Rental Values (14, 14, 4, 4)
-INSERT INTO Rental Values (15, 15, 5, 5)
-INSERT INTO Rental Values (16, 16, 6, 6)
-INSERT INTO Rental Values (17, 17, 7, 7)
-INSERT INTO Rental Values (18, 18, 8, 8)
-INSERT INTO Rental Values (19, 19, 9, 9)
-INSERT INTO Rental Values (20, 20, 10, 10)
-INSERT INTO Rental Values (21, 11, 1, 1)
+-- These rental will take service with penalty
+-- as their service date outside the subscription date.
+INSERT INTO Service Values ('Rental', '2022-12-27', '2023-01-27', 0, 'R'); -- 5 days before + 5 days After
+INSERT INTO Service Values ('Rental', '2022-12-27', '2023-01-31', 0, 'R'); -- 5 days before
+INSERT INTO Service Values ('Rental', '2023-01-01', '2023-02-05', 0, 'R'); -- 5 days after
 
-INSERT INTO DockGrouping VALUES (1, 1, '1/1/2022', '2/1/2022');
-INSERT INTO DockGrouping VALUES (2, 2, '1/1/2022', '2/1/2022');
-INSERT INTO DockGrouping VALUES (3, 3, '1/1/2022', '2/1/2022');
-INSERT INTO DockGrouping VALUES (4, 4, '1/1/2022', '2/1/2022');
-INSERT INTO DockGrouping VALUES (5, 5, '1/1/2022', '2/1/2022');
-INSERT INTO DockGrouping VALUES (6, 6, '1/1/2022', '2/1/2022');
-INSERT INTO DockGrouping VALUES (7, 7, '1/1/2022', '2/1/2022');
-INSERT INTO DockGrouping VALUES (8, 8, '1/1/2022', '2/1/2022');
-INSERT INTO DockGrouping VALUES (9, 9, '1/1/2022', '2/1/2022');
-INSERT INTO DockGrouping VALUES (10, 10, '1/1/2022', '2/1/2022');
+INSERT INTO Advertisement Values (1, 1);
+INSERT INTO Advertisement Values (2, 2);
+INSERT INTO Advertisement Values (3, 3);
+INSERT INTO Advertisement Values (4, 4);
+INSERT INTO Advertisement Values (5, 5);
+INSERT INTO Advertisement Values (6, 6);
+INSERT INTO Advertisement Values (7, 7);
+INSERT INTO Advertisement Values (8, 8);
+INSERT INTO Advertisement Values (9, 9);
+INSERT INTO Advertisement Values (10, 10);
 
+INSERT INTO DockGrouping VALUES (1, 1, '2022-11-01', '2022-11-08');
+INSERT INTO DockGrouping VALUES (2, 2, '2022-11-01', '2022-11-15');
+INSERT INTO DockGrouping VALUES (3, 3, '2022-11-01', '2022-11-22');
+INSERT INTO DockGrouping VALUES (4, 4, '2022-11-01', '2022-11-30');
+INSERT INTO DockGrouping VALUES (5, 5, '2022-12-01', '2022-12-08');
+INSERT INTO DockGrouping VALUES (6, 6, '2022-12-01', '2022-12-15');
+INSERT INTO DockGrouping VALUES (7, 7, '2022-12-01', '2022-12-22');
+INSERT INTO DockGrouping VALUES (8, 8, '2022-12-01', '2022-12-31');
+INSERT INTO DockGrouping VALUES (9, 9, '2022-01-01', '2023-01-08');
+INSERT INTO DockGrouping VALUES (10, 10, '2022-01-01', '2023-01-15');
+
+-- Advertisement Payment Only
 INSERT INTO Payment VALUES('Done', 1);
 INSERT INTO Payment VALUES('Done', 2);
+INSERT INTO Payment VALUES('Done', 3);
 INSERT INTO Payment VALUES('Done', 4);
 INSERT INTO Payment VALUES('Done', 5);
 INSERT INTO Payment VALUES('Pending', 6);
@@ -186,17 +184,32 @@ INSERT INTO Payment VALUES('Pending', 7);
 INSERT INTO Payment VALUES('Pending', 8);
 INSERT INTO Payment VALUES('Pending', 9);
 INSERT INTO Payment VALUES('Pending', 10);
+-- Rental Payment By Trigger
 
-INSERT INTO Penalty VALUES (20, 'Riding on wrong side', 1);
-INSERT INTO Penalty VALUES (20, 'Riding on wrong side', 2);
-INSERT INTO Penalty VALUES (20, 'Riding on wrong side', 3);
-INSERT INTO Penalty VALUES (20, 'Riding on wrong side', 4);
-INSERT INTO Penalty VALUES (20, 'Riding on wrong side', 5);
-INSERT INTO Penalty VALUES (20, 'Traffic light jump', 6);
-INSERT INTO Penalty VALUES (20, 'Traffic light jump', 7);
-INSERT INTO Penalty VALUES (20, 'Traffic light jump', 8);
-INSERT INTO Penalty VALUES (20, 'Traffic light jump', 9);
-INSERT INTO Penalty VALUES (20, 'Traffic light jump', 10);
+-- INSERT INTO Payment VALUES('Done', 11);
+-- INSERT INTO Payment VALUES('Done', 12);
+-- INSERT INTO Payment VALUES('Done', 13);
+-- INSERT INTO Payment VALUES('Done', 14);
+-- INSERT INTO Payment VALUES('Done', 15);
+-- INSERT INTO Payment VALUES('Pending', 16);
+-- INSERT INTO Payment VALUES('Pending', 17);
+-- INSERT INTO Payment VALUES('Pending', 18);
+-- INSERT INTO Payment VALUES('Pending', 19);
+-- INSERT INTO Payment VALUES('Pending', 20);
+-- INSERT INTO Payment VALUES('Pending', 21);
+
+-- Penalty on Rental By Trigger
+-- INSERT INTO Penalty VALUES (20, 'Riding on wrong side', 11);
+-- INSERT INTO Penalty VALUES (20, 'Riding on wrong side', 12);
+-- INSERT INTO Penalty VALUES (20, 'Riding on wrong side', 13);
+-- INSERT INTO Penalty VALUES (20, 'Riding on wrong side', 14);
+-- INSERT INTO Penalty VALUES (20, 'Riding on wrong side', 15);
+-- INSERT INTO Penalty VALUES (20, 'Traffic light jump', 16);
+-- INSERT INTO Penalty VALUES (20, 'Traffic light jump', 17);
+-- INSERT INTO Penalty VALUES (20, 'Traffic light jump', 18);
+-- INSERT INTO Penalty VALUES (20, 'Traffic light jump', 19);
+-- INSERT INTO Penalty VALUES (20, 'Traffic light jump', 20);
+-- INSERT INTO Penalty VALUES (20, 'Traffic light jump', 21);
 
 
 -- INSERT INTO Person VALUES ('Manuel', 'manuel@gmail.com', '75 Saint Alphonsus Street', 'Boston', 'MA', 1234567899, 02120, EncryptByKey(Key_GUID('Person_SM'), convert(varbinary,'Pass123')), 1, 0);
