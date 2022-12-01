@@ -16,7 +16,7 @@ Sequence of file execution -
 
 Data visualization tool configuration steps -  
 1. Install [PowerBI](https://www.microsoft.com/en-us/download/details.aspx?id=58494) for data visualization.
-2. Open the Power BI file [Visualization.pbix](DataVisualization/Visualization.pbix).
+2. Open the Power BI file [VisualizationAfterData.pbix](DataVisualization/VisualizationAfterData.pbix) [VisualizationBeforeData.pbix](DataVisualization/VisualizationBeforeData.pbix).
 3. Our Visualization showcases 3 types of graphs - 
    - Bar Graph - Price Range of Each Bike: 
      - It displays the rent prices of all the type of bikes being used in the project.
